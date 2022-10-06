@@ -60,8 +60,8 @@ function setup() {
 
   // add the cube to our marker
   // marker_hiro.add( cube );
-  // marker_zb.add( scene_3 );
-  marker_03.add( scene_3 );
+   marker_zb.add( scene_3 );
+  //marker_03.add( scene_3 );
 }
 
 
