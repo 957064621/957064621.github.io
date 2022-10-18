@@ -18,6 +18,9 @@
 		<!-- documentation:  https://cs.nyu.edu/~kapp/aframep5-ar -->
 		<script src="libs/aframep5_ar-v0.4.js"></script>
 
+		<script src="libs/p5.gif.js"></script>
+		<script src="libs/p5.gif.min.js"></script>
+
 		<!-- Your custom p5.js sketch -->
 		<script src="sketch.js"></script>
 	</head>
@@ -31,10 +34,11 @@
 			<a-assets>
 				<img src="img/1_ground_layer.png" id="1_ground_layer">
 				<img src="img/sphere_texture.png" id="sphere_texture">
+				<img src="img/12.png" id="12">
 			</a-assets>
 
 			<!-- markers that we are tracking with a link to the pattern file the AR.js library should be looking for -->
-			<a-marker id="03" type="pattern" url="markers/pattern-03.patt"></a-marker>
+			<a-marker id="123" type="pattern" url="markers/patt.123"></a-marker>
 			<a-marker id="zb" type="pattern" url="markers/patt.zb"></a-marker>
 
 			<!-- default camera entity (leave this and don't change it) -->
