@@ -2,7 +2,7 @@
 let world;
 
 // create a variable to hold our marker
-let marker_zb,marker_03;
+let marker_zb,marker_123;
 
 // create some geometry to add to our marker
 let scene_3;
@@ -49,19 +49,19 @@ function setup() {
     width:2,
     height:2,
     depth:2,
-    asset: '1_ground_layer',
+    asset: '12',
     opacity: 0.9,
     rotationX: -90,
   })
 
   // grab a reference to the marker that we set up on the HTML side (connect to it using its 'id')
-  marker_03 = world.getMarker('03');
+  marker_123 = world.getMarker('123');
   marker_zb = world.getMarker('zb');
 
   // add the cube to our marker
   // marker_hiro.add( cube );
-   marker_zb.add( scene_3 );
-  //marker_03.add( scene_3 );
+  // marker_zb.add( scene_3 );
+  marker_123.add( scene_3 );
 }
 
 
