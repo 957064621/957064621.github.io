@@ -62,6 +62,7 @@ function setup() {
   // marker_hiro.add( cube );
   // marker_zb.add( scene_3 );
   marker_123.add( scene_3 );
+  marker_zb.add( scene_3 );
 }
 
 
