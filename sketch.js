@@ -30,7 +30,7 @@ function setup() {
   // create our world (this also creates a p5 canvas for us)
   
   createCanvas(800, 600, WEBGL);
-  // read = true;
+  read = true;
 
   world = new World('ARScene');
 
@@ -74,9 +74,9 @@ function draw(){
    // noFill();
    // rect(0, 0, width, height);
 
-// if(read == true){
-//   background(255);
-// }else{
+if(read == true){
+  background(255);
+}else{
     if(marker_zb.isVisible()==true){
     let mk_pos = new THREE.Vector3();
     mk_pos.setFromMatrixPosition(marker_zb.tag.object3D.matrixWorld);
@@ -90,7 +90,7 @@ function draw(){
     rotateY(mk_rot.y);
     rotateZ(-mk_rot.z);
 
-    // rotateX(PI/2);
+    rotateX(PI/2);
 
     texture(vid);
     stroke(255);
@@ -103,7 +103,7 @@ function draw(){
    //strokeWeight(3);
    //rect(-width/2, -height/2, 584, 726);
    //image(vid, -width/2, -height/2);
-// }
+}
 
 function vidLoad() {
 
@@ -132,28 +132,28 @@ function vidLoad() {
   d_7.hide();
 }
 
-// function mouseClicked(){
-//     if(read == true){
+function mouseClicked(){
+    if(read == true){
 
-//     //set video loop here  
-//     vid.loop();
+    //set video loop here  
+    vid.loop();
 
-//     let arvid = document.getElementById('arjs-video');
-//     if(arvid != null){
-//       let style = window.getComputedStyle(arvid);
-//       let style_width = style.width;
-//       let style_height = style.height;
-//       let style_left = style.marginLeft;
-//       let style_top = style.marginTop;
+    let arvid = document.getElementById('arjs-video');
+    if(arvid != null){
+      let style = window.getComputedStyle(arvid);
+      let style_width = style.width;
+      let style_height = style.height;
+      let style_left = style.marginLeft;
+      let style_top = style.marginTop;
 
-//       let cvs = document.getElementById('defaultCanvas0');
-//       cvs.style.width =  style_width;
-//       cvs.style.height = style_height;
-//       cvs.style.marginLeft = style_left;
-//       cvs.style.marginTop =  style_top;
+      let cvs = document.getElementById('defaultCanvas0');
+      cvs.style.width =  style_width;
+      cvs.style.height = style_height;
+      cvs.style.marginLeft = style_left;
+      cvs.style.marginTop =  style_top;
 
-//       //console.log(style);
-//       read = false;
-//     }
-//   }
-// }
+      //console.log(style);
+      read = false;
+    }
+  }
+}
