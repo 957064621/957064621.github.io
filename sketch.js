@@ -2,73 +2,158 @@
 let world;
 
 // create a variable to hold our marker
-let marker_zb,marker_123;
+let marker_zb;
+let vid;
+let read;
+let read_width;
+let read_height;
 
-// create some geometry to add to our marker
-let scene_3;
+let d_1, d_2, d_3, d_4, d_5, d_6, d_7;
 
-let ball = new Sphere({
+let dl_1, dl_2, dl_3, dl_4, dl_5, dl_6, dl_7;
+
+
+let cube = new Box({
     x:0,
     y:0.5,
     z:0,
-    radius: 1,
-    opacity: 0.5,
-    asset: 'sphere_texture'
+    red:0,
+    green:255,
+    blue:0,
+    width:1,
+    height:1,
+    depth:1,
+    opacity: 0.5
 });
-
-// let dynamicBuffer;
 
 function setup() {
   // create our world (this also creates a p5 canvas for us)
+  
+  createCanvas(800, 600, WEBGL);
+  // read = true;
+
   world = new World('ARScene');
 
-  // //graphics buffer for dynamic texture
-  // dynamicBuffer = createGraphics(300, 300);
-  // dynamicBuffer.clear();
-  // // register this texture as a dynamic (updatable) texture
-  // let dTexture = world.createDynamicTextureFromCreateGraphics(dynamicBuffer);
-  // //bound the texture to object
-  // cube = new Box({
-  //   x:0,
-  //   y:1,
-  //   z:0,
-  //   width:2,
-  //   height:2,
-  //   depth:2,
-  //   asset: dTexture,
-  //   dynamicTexture: true,
-  //   dynamicTextureWidth: 300,
-  //   dynamicTextureHeight: 300
-  // });
-  // console.log(cube);
-
-  scene_3 = new Plane({
-    x:0,
-    y:1,
-    z:0,
-    width:2,
-    height:2,
-    depth:2,
-    asset: '12',
-    opacity: 0.9,
-    rotationX: -90,
-  })
-
-  // grab a reference to the marker that we set up on the HTML side (connect to it using its 'id')
-  marker_123 = world.getMarker('123');
+  //marker
   marker_zb = world.getMarker('zb');
+  marker_zb.add(cube);
 
-  // add the cube to our marker
-  // marker_hiro.add( cube );
-  // marker_zb.add( scene_3 );
-  marker_123.add( scene_3 );
-  marker_zb.add( scene_3 );
+    vid = createVideo(
+    'assest/13.webm',
+    vidLoad);
+
+    d_1 = loadImage("assest/d/1.png");
+
+    d_2 = createVideo(
+    'assest/d/2.webm',
+    vidLoad);
+
+    d_3 = createVideo(
+    'assest/d/3.webm',
+    vidLoad);
+
+    d_4 = loadImage("assest/d/4.png");
+
+    d_5 = createVideo(
+    'assest/d/5.webm',
+    vidLoad);
+
+    d_6 = createVideo(
+    'assest/d/6.webm',
+    vidLoad);
+
+    d_7 = createVideo(
+    'assest/d/7.webm',
+    vidLoad);
+
 }
 
+function draw(){
+  clear();
+   // stroke(255);
+   // noFill();
+   // rect(0, 0, width, height);
 
+// if(read == true){
+//   background(255);
+// }else{
+    if(marker_zb.isVisible()==true){
+    let mk_pos = new THREE.Vector3();
+    mk_pos.setFromMatrixPosition(marker_zb.tag.object3D.matrixWorld);
+    let x = mk_pos.x * width ;
+    let y = mk_pos.y * -height;
+    let z = mk_pos.z * width/2;
+    let mk_rot = marker_zb.tag.object3D.rotation;
 
-function draw() {
-  // dynamicBuffer.fill(random(255), random(255), random(255));
-  // dynamicBuffer.ellipse(random(dynamicBuffer.width), random(dynamicBuffer.height),
-  //                       30, 30);
+    translate(x, y, z);
+    rotateX(-mk_rot.x);
+    rotateY(mk_rot.y);
+    rotateZ(-mk_rot.z);
+
+    // rotateX(PI/2);
+
+    texture(vid);
+    stroke(255);
+    strokeWeight(3);
+    rect(0, 0, 800, 800);
+  }
 }
+   //texture(vid);
+   //stroke(255);
+   //strokeWeight(3);
+   //rect(-width/2, -height/2, 584, 726);
+   //image(vid, -width/2, -height/2);
+// }
+
+function vidLoad() {
+
+  vid.loop();
+  vid.volume(0);
+  vid.hide();
+
+  d_2.loop();
+  d_2.volume(0);
+  d_2.hide();
+
+  d_3.loop();
+  d_3.volume(0);
+  d_3.hide();
+
+  d_5.loop();
+  d_5.volume(0);
+  d_5.hide();
+
+  d_6.loop();
+  d_6.volume(0);
+  d_6.hide();
+
+  d_7.loop();
+  d_7.volume(0);
+  d_7.hide();
+}
+
+// function mouseClicked(){
+//     if(read == true){
+
+//     //set video loop here  
+//     vid.loop();
+
+//     let arvid = document.getElementById('arjs-video');
+//     if(arvid != null){
+//       let style = window.getComputedStyle(arvid);
+//       let style_width = style.width;
+//       let style_height = style.height;
+//       let style_left = style.marginLeft;
+//       let style_top = style.marginTop;
+
+//       let cvs = document.getElementById('defaultCanvas0');
+//       cvs.style.width =  style_width;
+//       cvs.style.height = style_height;
+//       cvs.style.marginLeft = style_left;
+//       cvs.style.marginTop =  style_top;
+
+//       //console.log(style);
+//       read = false;
+//     }
+//   }
+// }
