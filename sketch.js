@@ -36,11 +36,7 @@ function setup() {
 
   //marker
   marker_zb = world.getMarker('zb');
-  marker_zb.add(cube);
-
-    vid = createVideo(
-    'assest/13.webm',
-    vidLoad);
+  // marker_zb.add(cube);
 
     d_1 = loadImage("assest/d/1.png");
 
@@ -89,13 +85,42 @@ if(read == true){
     rotateX(-mk_rot.x);
     rotateY(mk_rot.y);
     rotateZ(-mk_rot.z);
-
     rotateX(PI/2);
 
-    texture(vid);
+    texture(d_7);
+    noStroke();
+    rect(-400, -400, 800, 800);
+
+    translate(0, 0, 50);
+    texture(d_6);
+    noStroke();
+    rect(-400, -400, 800, 800);
+
+    translate(0, 0, 50);
+    texture(d_5);
+    noStroke();
+    rect(-400, -400, 800, 800);
+
+    translate(0, 0, 50);
+    texture(d_4);
+    noStroke();
+    rect(-400, -400, 800, 800);
+
+    translate(0, 0, 50);
+    texture(d_3);
+    noStroke();
+    rect(-400, -400, 800, 800);
+
+    translate(0, 0, 50);
+    texture(d_2);
+    noStroke();
+    rect(-400, -400, 800, 800);
+
+    translate(0, 0, 50);
+    texture(d_1);
     stroke(255);
-    strokeWeight(3);
-    rect(0, 0, 800, 800);
+    strokeWeight(5);
+    rect(-400, -400, 800, 800);
   }
 }
    //texture(vid);
@@ -107,9 +132,9 @@ if(read == true){
 
 function vidLoad() {
 
-  vid.loop();
-  vid.volume(0);
-  vid.hide();
+  // vid.loop();
+  // vid.volume(0);
+  // vid.hide();
 
   d_2.loop();
   d_2.volume(0);
@@ -136,7 +161,7 @@ function mouseClicked(){
     if(read == true){
 
     //set video loop here  
-    vid.loop();
+    // vid.loop();
 
     let arvid = document.getElementById('arjs-video');
     if(arvid != null){
