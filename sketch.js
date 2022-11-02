@@ -29,7 +29,7 @@ let cube = new Box({
 function setup() {
   // create our world (this also creates a p5 canvas for us)
   
-  createCanvas(1000, 1000, WEBGL);
+  createCanvas(windowWidth, windowHeight, WEBGL);
   read = true;
 
   world = new World('ARScene');
@@ -338,4 +338,8 @@ function mouseClicked(){
       read = false;
     }
   }
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
