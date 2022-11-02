@@ -10,7 +10,7 @@ let read_height;
 
 let d_1, d_2, d_3, d_4, d_5, d_6, d_7;
 
-let dl_1, dl_2, dl_3, dl_4, dl_5, dl_6, dl_7;
+let a_1, a_2, a_3, a_4, a_5, a_6, a_7, a_8, a_9, a_10, a_11, a_12, a_13, a_14;
 
 
 let cube = new Box({
@@ -36,7 +36,52 @@ function setup() {
 
   //marker
   marker_zb = world.getMarker('zb');
+  marker_hiro = world.getMarker('hiro');
   // marker_zb.add(cube);
+
+    a_1 = loadImage("assest/a/1.png");
+
+    a_2 = loadImage("assest/a/2.png");
+
+    a_3 = createVideo(
+    'assest/a/3.webm',
+    vidLoad);
+
+    a_4 = createVideo(
+    'assest/a/4.webm',
+    vidLoad);
+
+    a_5 = createVideo(
+    'assest/a/5.webm',
+    vidLoad);
+
+    a_6 = createVideo(
+    'assest/a/6.webm',
+    vidLoad);
+
+    a_7 = createVideo(
+    'assest/a/7.webm',
+    vidLoad);
+
+    a_8 = createVideo(
+    'assest/a/8.webm',
+    vidLoad);
+
+    a_9 = loadImage("assest/a/9.png");
+
+    a_10 = loadImage("assest/a/10.png");
+
+    a_11 = loadImage("assest/a/11.png");
+
+    a_12 = createVideo(
+    'assest/a/12.webm',
+    vidLoad);
+
+    a_13 = loadImage("assest/a/13.png");
+
+    a_14 = loadImage("assest/a/14.png");
+
+
 
     d_1 = loadImage("assest/d/1.png");
 
@@ -73,6 +118,89 @@ function draw(){
 if(read == true){
   background(255);
 }else{
+    if(marker_hiro.isVisible()==true){
+    let mk_pos = new THREE.Vector3();
+    mk_pos.setFromMatrixPosition(marker_hiro.tag.object3D.matrixWorld);
+    let x = mk_pos.x * width ;
+    let y = mk_pos.y * -height;
+    let z = mk_pos.z * width/2;
+    let mk_rot = marker_hiro.tag.object3D.rotation;
+
+    translate(x, y, z);
+    rotateX(-mk_rot.x);
+    rotateY(mk_rot.y);
+    rotateZ(-mk_rot.z);
+    rotateX(PI/2);
+
+    texture(a_14);
+    noStroke();
+    rect(-325, -410, 650, 820);
+
+    translate(0, 0, 50);
+    texture(a_13);
+    noStroke();
+    rect(-325, -410, 650, 820);
+
+    // translate(0, 0, 50);
+    texture(a_12);
+    noStroke();
+    rect(-325, -410, 650, 820);
+
+    texture(a_10);
+    noStroke();
+    rect(-325, -410, 650, 820);
+
+    translate(0, 0, 50);
+    texture(a_11);
+    noStroke();
+    rect(-325, -410, 650, 820);
+
+    translate(0, 0, 50);
+    texture(a_9);
+    noStroke();
+    rect(-325, -410, 650, 820);
+
+    translate(0, 0, 50);
+    texture(a_8);
+    noStroke();
+    rect(-325, -410, 650, 820);
+
+    translate(0, 0, 50);
+    texture(a_7);
+    noStroke();
+    rect(-325, -410, 650, 820);
+
+    translate(0, 0, 50);
+    texture(a_6);
+    noStroke();
+    rect(-325, -410, 650, 820);
+
+    translate(0, 0, 50);
+    texture(a_5);
+    noStroke();
+    rect(-325, -410, 650, 820);
+
+    translate(0, 0, 50);
+    texture(a_4);
+    noStroke();
+    rect(-325, -410, 650, 820);
+
+    translate(0, 0, 50);
+    texture(a_3);
+    noStroke();
+    rect(-325, -410, 650, 820);
+
+    translate(0, 0, 50);
+    texture(a_2);
+    noStroke();
+    rect(-325, -410, 650, 820);
+
+    texture(a_1);
+    noStroke();
+    rect(-325, -410, 650, 820);
+  }
+
+
     if(marker_zb.isVisible()==true){
     let mk_pos = new THREE.Vector3();
     mk_pos.setFromMatrixPosition(marker_zb.tag.object3D.matrixWorld);
@@ -118,10 +246,11 @@ if(read == true){
 
     translate(0, 0, 50);
     texture(d_1);
-    stroke(255);
-    strokeWeight(5);
+    noStroke();
     rect(-400, -400, 800, 800);
   }
+
+
 }
    //texture(vid);
    //stroke(255);
@@ -135,6 +264,34 @@ function vidLoad() {
   // vid.loop();
   // vid.volume(0);
   // vid.hide();
+
+  a_3.loop();
+  a_3.volume(0);
+  a_3.hide();
+
+  a_4.loop();
+  a_4.volume(0);
+  a_4.hide();
+
+  a_5.loop();
+  a_5.volume(0);
+  a_5.hide();
+
+  a_6.loop();
+  a_6.volume(0);
+  a_6.hide();
+
+  a_7.loop();
+  a_7.volume(0);
+  a_7.hide();
+
+  a_8.loop();
+  a_8.volume(0);
+  a_8.hide();
+
+  a_12.loop();
+  a_12.volume(0);
+  a_12.hide();
 
   d_2.loop();
   d_2.volume(0);
