@@ -2,16 +2,15 @@
 let world;
 
 // create a variable to hold our marker
-let marker_zb;
-let vid;
-let read;
-let read_width;
-let read_height;
-
-let d_1, d_2, d_3, d_4, d_5, d_6, d_7;
+let marker_zb, marker_hiro;
 
 let a_1, a_2, a_3, a_4, a_5, a_6, a_7, a_8, a_9, a_10, a_11, a_12, a_13, a_14;
 
+let b_1, b_2, b_3, b_4, b_5;
+
+let c_1, c_2, c_3, c_4, c_5;
+
+let d_1, d_2, d_3, d_4, d_5, d_6, d_7;
 
 let cube = new Box({
     x:0,
@@ -115,9 +114,9 @@ function draw(){
    // noFill();
    // rect(0, 0, width, height);
 
-if(read == true){
-  background(255);
-}else{
+// if(read == true){
+//   background(255);
+// }else{
     if(marker_hiro.isVisible()==true){
     let mk_pos = new THREE.Vector3();
     mk_pos.setFromMatrixPosition(marker_hiro.tag.object3D.matrixWorld);
@@ -257,7 +256,7 @@ if(read == true){
    //strokeWeight(3);
    //rect(-width/2, -height/2, 584, 726);
    //image(vid, -width/2, -height/2);
-}
+// }
 
 function vidLoad() {
 
@@ -314,31 +313,31 @@ function vidLoad() {
   d_7.hide();
 }
 
-function mouseClicked(){
-    if(read == true){
+// function mouseClicked(){
+//     if(read == true){
 
-    //set video loop here  
-    // vid.loop();
+//     //set video loop here  
+//     // vid.loop();
 
-    let arvid = document.getElementById('arjs-video');
-    if(arvid != null){
-      let style = window.getComputedStyle(arvid);
-      let style_width = style.width;
-      let style_height = style.height;
-      let style_left = style.marginLeft;
-      let style_top = style.marginTop;
+//     let arvid = document.getElementById('arjs-video');
+//     if(arvid != null){
+//       let style = window.getComputedStyle(arvid);
+//       let style_width = style.width;
+//       let style_height = style.height;
+//       let style_left = style.marginLeft;
+//       let style_top = style.marginTop;
 
-      let cvs = document.getElementById('defaultCanvas0');
-      cvs.style.width =  style_width;
-      cvs.style.height = style_height;
-      cvs.style.marginLeft = style_left;
-      cvs.style.marginTop =  style_top;
+//       let cvs = document.getElementById('defaultCanvas0');
+//       cvs.style.width =  style_width;
+//       cvs.style.height = style_height;
+//       cvs.style.marginLeft = style_left;
+//       cvs.style.marginTop =  style_top;
 
-      //console.log(style);
-      read = false;
-    }
-  }
-}
+//       //console.log(style);
+//       read = false;
+//     }
+//   }
+// }
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
