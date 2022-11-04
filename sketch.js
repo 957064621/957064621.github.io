@@ -33,6 +33,7 @@ function setup() {
     dynamicTextureWidth: 650,
     dynamicTextureHeight: 820,
     rotationX: -90,
+    transparent: true,
   });
   console.log(plane);
 
