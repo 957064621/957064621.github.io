@@ -10,7 +10,7 @@ let b_1, b_2, b_3, b_4, b_5;
 
 let c_1, c_2, c_3, c_4, c_5;
 
-let d_1, d_2, d_3, d_4, d_5, d_6, d_7;
+let d_0, d_1, d_2, d_3, d_4, d_5, d_6, d_7;
 
 let cube = new Box({
     x:0,
@@ -130,6 +130,8 @@ function setup() {
 
     //逃避与追求
 
+    d_0 = loadImage("assest/d/0.png");
+
     d_1 = loadImage("assest/d/1.png");
 
     d_2 = createVideo(
@@ -227,17 +229,17 @@ function draw(){
     noStroke();
     rect(-325, -410, 650, 820);
 
-    translate(0, 0, 50);
+    translate(0, 0, 30);
     texture(a_4);
     noStroke();
     rect(-325, -410, 650, 820);
 
-    translate(0, 0, 50);
+    translate(0, 0, 30);
     texture(a_3);
     noStroke();
     rect(-325, -410, 650, 820);
 
-    translate(0, 0, 50);
+    translate(0, 0, 25);
     texture(a_2);
     noStroke();
     rect(-325, -410, 650, 820);
@@ -341,6 +343,11 @@ function draw(){
     rotateZ(-mk_rot.z);
     rotateX(PI/2);
 
+    texture(d_0);
+    noStroke();
+    rect(-500, -500, 800, 800);
+
+    translate(0, 0, 50);
     texture(d_7);
     noStroke();
     rect(-400, -400, 800, 800);
