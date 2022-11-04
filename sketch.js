@@ -27,7 +27,7 @@ function setup() {
     z:0,
     width:2,
     height:2.523,
-    opacity: 0.9,
+    // opacity: 0.9,
     asset: dTexture,
     dynamicTexture: true,
     dynamicTextureWidth: 650,
