@@ -28,7 +28,7 @@ let cube = new Box({
 function setup() {
   // create our world (this also creates a p5 canvas for us)
 
-  lock();
+  lock("portrait");
   
   createCanvas(windowWidth, windowHeight, WEBGL);
   read = true;
