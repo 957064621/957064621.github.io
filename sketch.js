@@ -345,7 +345,7 @@ function draw(){
 
     texture(d_0);
     noStroke();
-    rect(-500, -500, 800, 800);
+    rect(-400, -400, 800, 800);
 
     translate(0, 0, 50);
     texture(d_7);
