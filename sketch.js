@@ -267,22 +267,22 @@ function draw(){
     noStroke();
     rect(-320, -410, 640, 820);
 
-    translate(0, 0, 50);
+    translate(0, 0, 80);
     texture(b_4);
     noStroke();
     rect(-320, -410, 640, 820);
 
-    translate(0, 0, 50);
+    translate(0, 0, 80);
     texture(b_3);
     noStroke();
     rect(-320, -410, 640, 820);
 
-    translate(0, 0, 50);
+    translate(0, 0, 80);
     texture(b_2);
     noStroke();
     rect(-320, -410, 640, 820);
 
-    translate(0, 0, 50);
+    translate(0, 0, 80);
     texture(b_1);
     noStroke();
     rect(-320, -410, 640, 820);
@@ -306,22 +306,22 @@ function draw(){
     noStroke();
     rect(-360, -410, 720, 820);
 
-    translate(0, 0, 50);
+    translate(0, 0, 80);
     texture(c_4);
     noStroke();
     rect(-360, -410, 720, 820);
 
-    translate(0, 0, 50);
+    translate(0, 0, 80);
     texture(c_3);
     noStroke();
     rect(-360, -410, 720, 820);
 
-    translate(0, 0, 50);
+    translate(0, 0, 80);
     texture(c_2);
     noStroke();
     rect(-360, -410, 720, 820);
 
-    translate(0, 0, 50);
+    translate(0, 0, 80);
     texture(c_1);
     noStroke();
     rect(-360, -410, 720, 820);
@@ -343,11 +343,11 @@ function draw(){
     rotateZ(-mk_rot.z);
     rotateX(PI/2);
 
-    texture(d_0);
-    noStroke();
-    rect(-400, -400, 800, 800);
+    // texture(d_0);
+    // noStroke();
+    // rect(-400, -400, 800, 800);
 
-    translate(0, 0, 50);
+    // translate(0, 0, 50);
     texture(d_7);
     noStroke();
     rect(-400, -400, 800, 800);
